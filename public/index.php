@@ -7,9 +7,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$app->get('/', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write("Hello");
-    return $response;
-});
+// $app->get('/', function (Request $request, Response $response, array $args) {
+//     dd($request);
+// });
+
+$app->get('/', 'app\controllers\HomeController:index');
+$app->get('/user/update/{id}', 'app\controllers\UserController:show');
 
 $app->run();

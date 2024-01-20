@@ -4,4 +4,6 @@ use Slim\App;
 
 require "vendor/autoload.php";
 
-$app = new App;
+$config['displayErrorDetails'] = true;
+
+$app = new App(['settings' => $config]);
